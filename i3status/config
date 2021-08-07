@@ -1,0 +1,50 @@
+general {
+        output_format = "i3bar"
+        colors = false
+        markup = pango
+        interval = 5
+        color_good = '#2f343f'
+		color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
+}
+
+order += "load"
+order += "cpu_temperature 0"
+order += "volume master"
+order += "battery 1"
+order += "tztime local"
+
+load {
+        format = "<span background='#f59335'> Memorī wa %5min Gigabaito desu! </span>"
+}
+
+cpu_temperature 0 {
+        format = "<span background='#bf616a'> Chemperacha wa %degrees °C desu! </span>"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+volume master {
+        format = "<span background='#ebcb8b'> Boryumu wa %volume desu! </span>"
+        format_muted = "<span background='#ebcb8b'> Boryumu wa myuto desu! </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery 1 {
+	last_full_capacity = true
+        format = "<span background='#a3be8c'> %status Pawā wa %percentage desu! </span>"
+        format_down = "No Denchi desu!"
+        status_chr = "Ahh, Kimochii~~"
+        status_bat = "Pawā modo, Sōshite"
+        status_unk = "Wakaranai Pawā desu."
+        status_full = "Kanzen ni Pawā wa ippai sa rete imasu! Kimochii yokatta desu"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime local {
+		format = "<span background='#81a1c1'> Kyou wa %time desu! </span>"
+		format_time = "%a %-d %b %H:%M"
+}
+

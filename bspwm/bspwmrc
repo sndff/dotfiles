@@ -1,0 +1,29 @@
+#! /bin/sh
+
+sxhkd &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+hsetroot -extend .wallpaper.png &
+hsetroot -extend .wallpaper.jpg &
+polybar saiferBSPWM &
+xdman &
+
+bspc monitor -d I II III IV
+
+bspc config border_width        2
+bspc config window_gap          5
+
+bspc config focus_follows_pointer true
+bspc config focused_border_color  "#FFB52A"
+bspc config normal_border_color  "#FFEBC4"
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^4' state=floating follow=on
+bspc rule -a Inkscape desktop='^4' state=floating follow=on
+bspc rule -a Chromium desktop='^2' follow=on
+bspc rule -a Firefox desktop='^2' follow=on
+bspc rule -a Code desktop='^3' follow=on
+bspc rule -a xdman-Main state=floating
+
+

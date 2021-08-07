@@ -1,0 +1,6 @@
+Net/ThemeName "SaiferTheme"
+#Gtk/CursorThemeName "Bibata-Modern-Classic"
+Xft/Hinting 1
+Xft/RGBA "rgb"
+Xft/HintStyle "hintslight"
+Xft/Antialias 1

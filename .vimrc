@@ -30,3 +30,4 @@ inoremap <html> <!DOCTYPE html><RETURN><html><RETURN><RETURN></html><ESC>ki
 inoremap <body> <body><RETURN><RETURN></body><ESC>ki
 inoremap <head> <head><RETURN><RETURN></head><ESC>ki
 inoremap <title> <title></title><ESC>hhhhhhhi
+inoremap { {<RETURN>}<ESC>ki<END>
